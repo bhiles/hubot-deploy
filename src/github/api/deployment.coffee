@@ -183,7 +183,7 @@ class Deployment
     if @application['auto_merge']?
       @autoMerge = @application['auto_merge']
     if @task == 'deploy:auto-merge'
-      @auto-merge = true
+      @autoMerge = true
       @task = 'deploy'
     if @force
       @autoMerge = false

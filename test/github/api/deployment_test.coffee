@@ -11,7 +11,7 @@ describe "Deployment fixtures", () ->
 
     it "works with auto-merging", () ->
       deployment = new Deployment("hubot", "master", "deploy:auto-merge", "production", "", "")
-      assert.equal(false, deployment.autoMerge)
+      assert.equal(true, deployment.autoMerge)
       assert.equal("deploy", deployment.task)
 
   describe "#api", () ->
