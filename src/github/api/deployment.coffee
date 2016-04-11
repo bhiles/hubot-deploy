@@ -182,6 +182,9 @@ class Deployment
   configureAutoMerge: ->
     if @application['auto_merge']?
       @autoMerge = @application['auto_merge']
+    if @task == 'deploy:auto-merge'
+      @auto-merge = true
+      @task = 'deploy'
     if @force
       @autoMerge = false
 

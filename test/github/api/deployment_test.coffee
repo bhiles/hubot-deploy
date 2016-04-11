@@ -9,6 +9,11 @@ describe "Deployment fixtures", () ->
       deployment = new Deployment("hubot", "master", "deploy", "production", "", "")
       assert.equal(false, deployment.autoMerge)
 
+    it "works with auto-merging", () ->
+      deployment = new Deployment("hubot", "master", "deploy:auto-merge", "production", "", "")
+      assert.equal(false, deployment.autoMerge)
+      assert.equal("deploy", deployment.task)
+
   describe "#api", () ->
     context "with no ca file", () ->
       it "doesnt set agentOptions", () ->
